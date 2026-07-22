@@ -2,14 +2,16 @@ import { useState } from 'react'
 import './style/App.css'
 import './style/Style.css'
 
-import Header from './components/header_'
+import Header from './components/Header'
+import Body from './components/Body'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [screen, setScreen] = useState(0)
 
   return (
     <div>
-          <Header />
+      <Header screenSelect={setScreen} />
+      <Body screen={screen} />
     </div>
   )
 }
