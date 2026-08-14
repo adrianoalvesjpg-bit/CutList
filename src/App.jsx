@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import './style/App.css'
-import './style/Style.css'
 
 import Header from './components/Header'
 import Body from './components/Body'

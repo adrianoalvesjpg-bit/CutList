@@ -1,0 +1,17 @@
+.upload-icon {
+    color: #6e6e6e85;
+    background-color: #7802ff07;
+    border-radius: 50%;
+
+}
+.upload-icon:hover {
+    color: #16bb1e;
+    transition: 0.3s ease;
+    background-color: #7802ff0c;
+    box-shadow: 0px 0px 30px #0aca244f;
+
+}
+
+.file-upload {
+  display: none;
+}

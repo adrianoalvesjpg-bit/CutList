@@ -1,0 +1,77 @@
+.div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.div-img {
+    padding-top: 5px;
+    display: block;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    margin-top: 20px;
+    width: 250px;
+    height: 250px;
+    position: relative
+    
+
+}
+
+.div-img::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    padding: 2px;
+    background: radial-gradient(circle at top left, #b794f4, transparent 60%),
+                radial-gradient(circle at bottom right, #6b46c1, transparent 60%);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0; /* invisível por padrão */
+    transition: opacity 0.3s ease;
+}
+
+.div-img:hover::before {
+    opacity: 1; /* aparece ao passar o mouse */
+}
+
+
+.img {
+    width: 210px;
+    height: 210px; 
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.div-btn {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 8px;
+
+}
+
+
+.file-name {
+    color: var(--text);
+    font-size: 0.75rem;
+    width: 300px;
+}
+.file-name:hover {
+    color: var(--text)
+}
+
+
+

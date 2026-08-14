@@ -11,8 +11,11 @@
   /* ---------------------------------------------------------------------------------------------------------- */
   /* ---------------------------------------------------------------------------------------------------------- */
 
-  --text: #776f81;
+  --div-bg: #120f15;
+  --text: #abb2be;
+  --text-title: #f8f8f8;
   --text-hover: #e1dde7;
+  --text-error: #ff4d4f;
   --text-h: #08060d;
   --bg: #fff;
   --border: #e5e4e7;
@@ -45,10 +48,12 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #9ca3af;
+    --text: #7c7c7c;
     --text-h: #f3f4f6;
     --bg: #120d18;
-    --border: #2e303a;
+    --border: #332e3a;
+    --border2: #2b1e3b;
+    --border-hv: #5f25aa;
     --code-bg: #1f2028;
     --accent: #c084fc;
     --accent-bg: rgba(192, 132, 252, 0.15);
@@ -76,6 +81,12 @@ body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+}
+hr {
+  border: none;
+  height: 1px;
+  background-color: #6818caa0;
+  margin: 20px 0;
 }
 
 h1,
@@ -106,12 +117,6 @@ h2 {
 p {
   margin: 0;
   padding: 4px;
-
-  &:hover {
-    color: var(--text-hover);
-    transition: 0.2s;
-
-  }
 }
 
 code,

@@ -1,0 +1,157 @@
+.flex {
+  display: flex;
+  justify-content: space-between;
+  
+}
+.main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    position: relative;
+    background-color: var(--div-bg);
+    border: solid 1px var(--border);
+    height: 340px;
+    width: 220px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 4px;
+    padding: 15px;
+    text-align: left;
+
+}
+
+.card:hover {
+    border-radius: 14px;
+    scale: 1.05;
+    transition: scale 0.2s ease;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  padding: 3px;
+  background: radial-gradient(circle at top left, #b794f4, transparent 60%),
+              radial-gradient(circle at bottom right, #6b46c1, transparent 60%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+.card:hover::before {
+  opacity: 1.0;
+}
+
+.tooltip {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.expand {
+  margin: 5px;
+  font-size: 30px;
+  transition: all 0.3s ease-in-out;
+}
+.expand:hover {
+  color:#6b46c1;
+}
+.expandtooltip {
+  visibility: hidden;
+  position: absolute;
+  bottom: 110%;
+  left: 0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #222;
+  color: #fff;
+  font-size: 12px;
+  white-space: nowrap;
+  transition-delay: 0.4s;
+}
+
+.tooltip:hover .expandtooltip {
+  visibility: visible;
+}
+
+.code {
+  font-weight: 300;
+  font-size: 34px;
+  color: var(--text-title);
+  
+}
+
+.partnumber {
+  position: relative;
+  font-size: 15px;
+  margin-left: 5px;
+  bottom: 12px;
+  letter-spacing: 1.4px;
+}
+.category {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text);
+  padding: 0px;
+  letter-spacing: 2px;
+
+}
+
+
+.img {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  height: 56%;
+  width: 100%;
+  border: solid 1px #1c1c1c;
+}
+
+.statusOff {
+  width: 55px;
+  height: 20px;
+  border: 0;
+  border-radius: 999px;
+  color: #ebebeb;
+  font-size: 13px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin: 2px;
+  background-color: #af0404;
+  border: solid 1px #260707;
+  padding: 2px;
+
+}
+.statusOn {
+  width: 45px;
+  height: 20px;
+  border: 0;
+  border-radius: 999px;
+  color: #ebebeb;
+  font-size: 13px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin: 2px;
+  background-color: #04af43;
+  border: solid 1px #0c2607;
+  padding: 2px;
+
+
+}
+
+.description {
+  margin-top: 10px;
+  font-size: 20px;
+}

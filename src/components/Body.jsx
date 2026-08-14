@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from "motion/react"
 
 import RawMaterial from '../screens/RawMaterial'
 import Products from '../screens/Products'
@@ -12,6 +13,7 @@ const Body = ({screen}) => {
   return (
     <div>
       {screens[screen]}
+
     </div>
   )
 }
