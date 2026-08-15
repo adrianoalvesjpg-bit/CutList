@@ -26,8 +26,8 @@ export default function ProductRegister() {
       </div>
         <div className={RegisterSt["div-main"]}>
           <div className={RegisterSt["div-list"]}>
-              {register.inputsText.map((text) => (
-                <ul className={RegisterSt["input-list"]}>
+              {register.inputsText.map((text, index) => (
+                <ul key={index} className={RegisterSt["input-list"]}>
                     <li><Input 
                         text= {ToTitleCase(text)}
                         onChange={setProductRegister} 

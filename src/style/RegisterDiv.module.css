@@ -34,9 +34,14 @@
     max-width: 650px;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    flex-wrap: wrap;
+    box-shadow: 5px 8px 15px var(--shadow-div);
+
+
+
 }
 
-.register-div::before {
+/* .register-div::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -55,7 +60,7 @@
 }
 .register-div:hover::before {
   opacity: 1.0;
-}
+} */
 
 
 .title-div {

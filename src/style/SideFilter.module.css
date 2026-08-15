@@ -1,0 +1,23 @@
+.main {
+    display: flex;
+    position: fixed;
+    height: 100%;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 280px;
+    margin-top: 60px;
+    padding-top: 20px;
+    overflow-y: auto;
+    background-color: var(--div-bg);
+    border-right: solid 1px var(--border2);
+    box-shadow: 5px 8px 15px var(--shadow-div);
+
+}
+
+
+@media (max-width: 768px) {
+    .main {
+        width: 90%;
+    }
+}
