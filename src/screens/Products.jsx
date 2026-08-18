@@ -176,8 +176,8 @@ const Products = () => {
       <div>
         {/* < ProductRegister /> */}
         <div className={ProductSt.cards}>
-          {products.map((product) => (
-          < CardProduct product={product}/>
+          {products.map((product, idx) => (
+          < CardProduct key={idx} product={product}/>
           ))}
         </div>
       </div>

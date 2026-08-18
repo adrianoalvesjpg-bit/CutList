@@ -1,20 +1,49 @@
-.main {
+.div {
+    margin: 0px 25px 30px 25px;  
+}
+
+.main{
+    display: flex;
+    margin-bottom: 100px;
+    flex-direction: column;
+
+}
+
+.aside {
     display: flex;
     position: fixed;
-    height: 100%;
+    flex-direction: column;
+    height: 100vh;
     z-index: 2;
     top: 0;
     left: 0;
     width: 280px;
     margin-top: 60px;
-    padding-top: 20px;
+    padding-top: 35px;
     overflow-y: auto;
+    overflow-x: hidden;
     background-color: var(--div-bg);
     border-right: solid 1px var(--border2);
     box-shadow: 5px 8px 15px var(--shadow-div);
-
 }
 
+.aside::-webkit-scrollbar {
+  width: 6px;
+}
+
+.aside::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.aside::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.aside::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
 
 @media (max-width: 768px) {
     .main {

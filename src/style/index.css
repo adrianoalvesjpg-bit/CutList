@@ -1,8 +1,12 @@
 :root {
 
   --header-background: linear-gradient(180deg, #010101, #130d1b);
-
   --shadow-div: #38383860;
+  --shadow-input: rgba(149, 99, 241, 0.2);
+  --bg-bt: #15101d;
+  --bg-bt-hv: #1a1124;
+  --bg-border-focus:#9963f196;
+  --border-hv: #4f2a75;
 
 
   /* ---------------------------------------------------------------------------------------------------------- */
@@ -54,9 +58,9 @@
     --bg: #120d18;
     --border: #332e3a;
     --border2: #2b1e3b;
-    --border-hv: #5f25aa;
+    --border-hv: #4f2a75;
     --code-bg: #1f2028;
-    --accent: #c084fc;
+    --accent: #a974dd;
     --accent-bg: rgba(192, 132, 252, 0.15);
     --accent-border: rgba(192, 132, 252, 0.5);
     --social-bg: rgba(47, 48, 58, 0.5);

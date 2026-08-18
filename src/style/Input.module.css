@@ -29,7 +29,7 @@
     color: var(--text);
     border: solid 1px var(--border);
     border-radius: 4px;
-    background-color: transparent;
+    background-color: var(--bg-bt);
     width: 100%;
     padding: 0px;
     margin: 0px;
@@ -44,11 +44,12 @@
 
 .input-fieldset:focus-within {
     transition: 0.3s ease;
-    border: none;
-    border-bottom: solid 1px #6b46c1;
+    border-color: var(--bg-border-focus);
     outline: none;
-    box-shadow: 0 6px 10px #35235f;
-    border: solid 1px #6b46c1;
+    box-shadow: 2px 2px 5px 2px var(--shadow-input);
+    background-color: var(--bg-bt-hv);
+    
+
 
 }
 
