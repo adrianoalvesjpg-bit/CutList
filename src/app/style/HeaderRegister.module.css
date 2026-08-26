@@ -1,0 +1,39 @@
+.div {
+    display: flex;
+    align-items: center;
+}
+
+.main {
+    display: flex;
+    background-color: var(--bg-transparent);
+    border-radius: 50px;
+    width: 60%;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 15px 40px 15px 40px;
+    border: solid 2px #29272b;
+    box-shadow: 0 3px 10px 0px #4b494938;
+    transition: 0.3s ease-in-out;
+    gap: 40px;
+
+
+}
+
+.main:hover {
+    border-color: #2f2e31;
+    box-shadow: 0 3px 18px 0px #4b494938;
+
+
+}
+
+.div:hover {
+    transition: all 0.3s ease-in-out;
+    color: #cdccce;
+    scale: 1.05;
+}
+
+.searchArea {
+  flex: 1;
+  min-width: 0;
+  align-items: center;
+}

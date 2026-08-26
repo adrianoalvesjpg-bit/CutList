@@ -1,0 +1,25 @@
+.remove-icon {
+    color: #6e6e6e85;
+    background-color: var(--accent-bg);
+    border-radius: 50%;
+
+}
+.remove-icon:hover {
+    color: #c90c0c;
+    transition: 0.3s ease;
+    background-color: var(--accent-bg);
+    box-shadow: 0px 0px 30px #b90e0e54;
+    
+}
+
+.remove-icon-disabled {
+    color: #6e6e6e85;
+    border-radius: 50%;
+    transition: 0.3s ease;
+    box-shadow: 0px 0px 20px var(--accent-border);
+
+}
+
+.btn-remove {
+display: none;
+}

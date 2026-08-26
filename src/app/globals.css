@@ -1,12 +1,62 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --header-background: linear-gradient(180deg, #010101, #0d1420);
+  --shadow-div: #38383860;
+  --shadow-input: rgba(99, 149, 241, 0.2);
+  --bg-bt: #10151d;
+  --bg-bt-hv: #111a24;
+  --bg-border-focus: #6395f196;
+  --border-hv: #2a4f75;
+  --bg-transparent: #52606921;
+  --div-bg: #f4f8fc;
+  --text: #526069;
+  --text-title: #b9bcbe;
+  --text-hover: #dbeafe;
+  --text-h: #17212b;
+  --bg: #ffffff;
+  --border: #d6e2ee;
+  --border2: #1e2b3b;
+  --code-bg: #edf4fb;
+  --accent: #3b82c4;
+  --accent-light: #8fc5f5;
+  --accent-dark: #2563a0;
+  --accent-black: #313f4b;
+  --accent-bg: rgba(59, 130, 196, 0.1);
+  --accent-border: rgba(59, 130, 196, 0.5);
+  --social-bg: rgba(226, 235, 244, 0.5);
+  --shadow-light: #4a9fff73;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #020407;
     --foreground: #ededed;
+
+    --header-background: linear-gradient(180deg, #010101, #0d1420);
+    --shadow-div: #38383860;
+    --shadow-input: rgba(99, 149, 241, 0.2);
+    --bg-bt: #10151d;
+    --bg-bt-hv: #111a24;
+    --bg-border-focus: #6395f196;
+    --border-hv: #2a4f75;
+    --bg-transparent: #52606921;
+    --div-bg: #0d0e0f;
+    --text: #7c7c7c;
+    --text-h: #f3f4f6;
+    --border: #2e323a;
+    --border2: #1e2b3b;
+    --border-hv: #2a4f75;
+    --code-bg: #1f2428;
+    --accent: #74a9dd;
+    --accent-light: #a9d5ff;
+    --accent-dark: #397eb8;
+    --accent-black: #49545e;
+    --accent-bg: rgba(132, 180, 252, 0.15);
+    --accent-border: rgba(132, 180, 252, 0.5);
+    --social-bg: rgba(47, 52, 58, 0.5);
+    --shadow-light: #4a9fff73;
   }
 }
 
@@ -46,4 +96,42 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+hr {
+  border: none;
+  height: 1.5px;
+  background-color: var(--bg-bt-hv);
+  margin: 3px;
+  margin-top: 1px;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+  padding: 4px;
 }

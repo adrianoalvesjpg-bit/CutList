@@ -1,0 +1,50 @@
+.flex_div {
+    display: flex;
+    flex-direction: row;
+}
+.main {
+    display: flex;
+    align-self: flex-start;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    border-top: solid 1px var(--border);
+}
+
+
+.category {
+    display: flex;
+    margin: 0px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--text-hover);
+    padding-bottom: 15px;
+    letter-spacing: 1.1px;
+    background-color: transparent;
+    border: none;
+}
+
+
+.checkbox, .checkbox_all {
+    accent-color: var(--accent);
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    margin: 10px;
+}
+
+.checkbox {
+    margin-left: 25px;
+
+}
+
+.checkbox_label {
+    margin: 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

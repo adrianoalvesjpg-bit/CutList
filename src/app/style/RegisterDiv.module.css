@@ -1,0 +1,102 @@
+.input-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.input-list li {
+  display: block;
+  margin-bottom: 10px;
+}
+
+
+.div-list {
+  display: block;
+  width: 100%;
+
+}
+
+.div-main {
+  display: flex;
+  gap: 20px;
+
+}
+
+.register-div {
+    position: relative;
+    background-color: var(--div-bg);
+    border: solid 1px var(--border);
+    padding: 25px;
+    padding-right: 0px;
+    margin: 40px;
+    border-radius: 8px;
+    display: block;
+    max-width: 650px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    flex-wrap: wrap;
+    box-shadow: 5px 8px 15px var(--shadow-div);
+
+
+
+}
+
+/* .register-div::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  padding: 2px;
+  background: radial-gradient(circle at top left, var(--accent-light), transparent 60%),
+        radial-gradient(circle at bottom right, var(--accent-dark), transparent 60%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+.register-div:hover::before {
+  opacity: 1.0;
+} */
+
+
+.title-div {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 1.3rem;
+
+}
+.title {
+  color: var(--text-title);
+  font-size: 1.8rem;
+  text-align: left;
+  margin: 0;
+  letter-spacing: 0.2px;
+
+}
+
+.subtitle {
+  color: var(--text);
+  font-size: 1.25rem;
+  text-align: left;
+  padding-left: 3px;
+}
+
+.close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.close-icon:hover {
+  color: var(--text-error);
+}

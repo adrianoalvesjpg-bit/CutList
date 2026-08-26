@@ -1,0 +1,104 @@
+.header,
+.header2 {
+  transition: height 0.3s ease, background-color 0.3s ease;
+}
+
+.header, .header2 {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0px;
+    right: 0;
+    background-color: var(--bg-bt);
+    margin: 0px;
+    margin-right: 2px;
+    height: 60px;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    padding: 10px;
+    padding-right: 20px;
+    z-index: 2;
+}
+
+.header2 {
+    height: 70px;
+    z-index: 10;
+    border-bottom: solid 2px var(--border2);
+}
+
+.menu-bar {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 10px;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: var(--text);
+    transition: 0.2s,  box-shadow 0.3s ease;
+    cursor: pointer;
+
+
+    &:hover {
+        color: var(--text-h);
+    }
+}
+
+.right-group {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* ajusta esse valor pra distância que quiser */
+}
+
+.active {
+    border-bottom: 2px solid var(--accent);
+    background-color: transparent;
+    color: var(--text-h);
+    transition: all 0.2s ease;
+    padding: 5px;
+    padding-bottom: 20px;
+
+
+}
+
+.devMode {
+  border: solid 1px var(--border-hv);
+  background-color: var(--bg-bt);
+  margin-right: 80px;
+  padding: 10px 25px 10px 25px;
+  border-radius: 25px;
+  transition: scale 0.3s ease, border-radius 0.8s ease, box-shadow 0.3s ease;
+  font-weight: bold;
+}
+.devMode:hover {
+  background: linear-gradient(270deg, var(--background), var(--border-hv), var(--accent), var(--bg-border-focus), var(--border-hv), var(--background));
+  background-size: 400% 400%;
+  animation: gradientMove 6s ease infinite;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0 0 15px var(--shadow-light);
+
+
+}
+
+.devMode.activeDev {
+  background: linear-gradient(270deg, var(--background), var(--border-hv), var(--accent), var(--bg-border-focus), var(--border-hv), var(--background));
+  background-size: 400% 400%;
+  color: var(--text-h);
+  box-shadow: 0 0 15px var(--shadow-light);
+  animation: gradientMove 6s ease infinite;
+
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
