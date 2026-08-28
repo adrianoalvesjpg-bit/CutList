@@ -1,5 +1,5 @@
 import React from 'react'
-import RemoveBtn from '../style/RemoveIcon.module.css'
+import RemoveBtn from '../../style/ui/RemoveIcon.module.css'
 import { IoIosRemoveCircle } from "react-icons/io"
 
 export default function RemoveIcon({disabled=false, exec}) {

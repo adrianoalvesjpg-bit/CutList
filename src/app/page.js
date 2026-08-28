@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from 'react'
-import './style/App.css'
+import './style/ui/App.css'
 
-import Header from './components/Header'
-import Body from './components/Body'
+import Header from './components/ui/Header'
+import Body from './components/ui/Body'
 
 export default function Home() {
   const [screen, setScreen] = useState(0)

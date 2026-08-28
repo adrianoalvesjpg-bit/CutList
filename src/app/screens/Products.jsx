@@ -1,10 +1,10 @@
 import React from 'react'
-import ProductRegister from '../components/ProductRegister'
-import CardProduct from '../components/CardProduct'
-import SideFilter from '../components/SideFilter'
-import HeaderRegister from '../components/HeaderRegister'
+import ProductRegister from '../components/ui/ProductRegister'
+import CardProduct from '../components/ui/CardProduct'
+import SideFilter from '../components/ui/SideFilter'
+import HeaderRegister from '../components/ui/HeaderRegister'
 
-import ProductSt from '../style/Products.module.css'
+import ProductSt from '../style/ui/Products.module.css'
 
 const Products = () => {
   const products = [

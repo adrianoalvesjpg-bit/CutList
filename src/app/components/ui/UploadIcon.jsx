@@ -1,5 +1,5 @@
 import React from 'react'
-import UpIcon from '../style/UploadIcon.module.css'
+import UpIcon from '../../style/ui/UploadIcon.module.css'
 import { IoCloudUploadOutline } from "react-icons/io5"
 
 export default function UploadIcon(e) {

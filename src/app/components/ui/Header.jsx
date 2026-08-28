@@ -1,8 +1,10 @@
 import React from "react";
 import { useEffect, useState } from "react";
 
-import HeaderSt from '../style/Header.module.css'
-import UserSt from '../style/User.module.css'
+import HeaderSt from '../../style/ui/Header.module.css'
+import UserSt from '../../style/ui/User.module.css'
+import { head, header } from "motion/react-client";
+import { IoExitOutline } from "react-icons/io5";
 
 function Header({screen, screenSelect}){
     const [scrollY, setScrollY] = useState(0);
@@ -21,6 +23,18 @@ function Header({screen, screenSelect}){
     
     const headerStyle = scrollY > 10 ? HeaderSt.header2 : HeaderSt.header
 
+    
+    if (screen === 2) {
+        return (
+            <>
+            <header className={HeaderSt.devMode}>
+            </header>
+
+            <IoExitOutline onClick={() => screenSelect(0)} className={HeaderSt.exitBt}/>
+            
+            </>
+        )
+    }
 
     return(
         <header className={headerStyle}>
@@ -30,7 +44,7 @@ function Header({screen, screenSelect}){
             </ul>
             <div className={HeaderSt["right-group"]}>
                 <ul className={HeaderSt["menu-bar"]}>
-                    <li><a onClick={() => screenSelect(2)} className={`${HeaderSt.devMode} ${screen === 2 ? HeaderSt.activeDev : ""}`}>DevMode</a></li>
+                    <li><a onClick={() => screenSelect(2)} className={`${HeaderSt.devModeBt} ${screen === 2 ? HeaderSt.activeDev : ""}`}>DevMode</a></li>
                 </ul>
                 <button id={UserSt["button-perfil"]}></button>
             </div>

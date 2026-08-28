@@ -12,7 +12,7 @@ import {
 import '@xyflow/react/dist/style.css';
 
 
-import StIndex from '../../style/ReactFlow/index.module.css'
+import StDrawHarness from '../../style/ReactFlow/DrawHarness.module.css'
 import { div } from 'motion/react-client';
 
 // --- CUSTOM NODE ---
@@ -63,8 +63,8 @@ function Flow() {
   );
 
   return (
-    <div className={StIndex.main}>
-      <div className={StIndex.canva}>
+    <div className={StDrawHarness.main}>
+      <div className={StDrawHarness.canva}>
         <ReactFlow
           nodes={nodes}
           edges={edges}
@@ -72,6 +72,7 @@ function Flow() {
           onEdgesChange={onEdgesChange}
           onConnect={onConnect}
           nodeTypes={nodeTypes}
+          proOptions={{ hideAttribution: true }}
           fitView
         >
           <Background />

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import StSearch from '../style/SearchInput.module.css'
+import StSearch from '../../style/ui/SearchInput.module.css'
 export default function SearchInput({
       OnChage,
       placeholder='Buscar produtos...',
@@ -23,7 +23,7 @@ export default function SearchInput({
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width="2"
+            strokeWidth="2"
             stroke-linecap="round"
             stroke-linejoin="round"
             >

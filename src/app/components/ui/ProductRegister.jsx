@@ -2,7 +2,7 @@ import { useState } from "react"
 import Input from "./Input"
 import ImageLoad from "./ImageLoad"
 
-import RegisterSt from '../style/RegisterDiv.module.css'
+import RegisterSt from '../../style/ui/RegisterDiv.module.css'
 import { IoMdClose } from "react-icons/io";
 
 import ToTitleCase from './TitleCase'

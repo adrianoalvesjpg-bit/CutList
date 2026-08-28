@@ -63,7 +63,7 @@
 
 }
 
-.devMode {
+.devModeBt {
   border: solid 1px var(--border-hv);
   background-color: var(--bg-bt);
   margin-right: 80px;
@@ -72,7 +72,7 @@
   transition: scale 0.3s ease, border-radius 0.8s ease, box-shadow 0.3s ease;
   font-weight: bold;
 }
-.devMode:hover {
+.devModeBt:hover {
   background: linear-gradient(270deg, var(--background), var(--border-hv), var(--accent), var(--bg-border-focus), var(--border-hv), var(--background));
   background-size: 400% 400%;
   animation: gradientMove 6s ease infinite;
@@ -82,13 +82,45 @@
 
 }
 
-.devMode.activeDev {
+.devModeBt.activeDev {
   background: linear-gradient(270deg, var(--background), var(--border-hv), var(--accent), var(--bg-border-focus), var(--border-hv), var(--background));
   background-size: 400% 400%;
   color: var(--text-h);
   box-shadow: 0 0 15px var(--shadow-light);
   animation: gradientMove 6s ease infinite;
 
+}
+
+.devMode {
+  display: flex;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 55px;
+  z-index: 1;
+  background-color: var(--bg-bt);
+  border-radius: 50px;
+}
+
+.exitBt {
+  display: flex;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  height: 30px;
+  width: 30px;
+  z-index: 1;
+  cursor: pointer;
+
+}
+.exitBt:hover {
+  transform: scale(1.05);
+  color: #a21111;
+  transition: all 0.2s ease-in-out;
 }
 
 @keyframes gradientMove {

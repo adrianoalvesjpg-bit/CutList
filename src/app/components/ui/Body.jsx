@@ -1,9 +1,8 @@
 import React from 'react'
-import { motion } from "motion/react"
 
-import RawMaterial from '../screens/RawMaterial'
-import Dev from '../screens/DevState'
-import Products from '../screens/Products'
+import RawMaterial from '../../screens/RawMaterial'
+import Dev from '../../screens/DevState'
+import Products from '../../screens/Products'
 
 
 const Body = ({screen}) => {

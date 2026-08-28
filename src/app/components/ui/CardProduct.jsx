@@ -2,7 +2,7 @@ import React from 'react'
 
 import { CgExpand } from "react-icons/cg";
 
-import CardSt from '../style/CardProduct.module.css'
+import CardSt from '../../style/ui/CardProduct.module.css'
 export default function CardProduct({product}) {
 
   const stats= product.stats

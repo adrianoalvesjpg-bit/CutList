@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import InputSt from '../style/Input.module.css'
+import InputSt from '../../style/ui/Input.module.css'
 
 export default function Input({ text, onChange }) {
   return (

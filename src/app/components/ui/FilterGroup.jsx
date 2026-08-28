@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import StFilterGroup from '../style/FilterGroup.module.css'
+import StFilterGroup from '../../style/ui/FilterGroup.module.css'
 
 export default function FilterGroup({ data }) {
   const listCheckboxes = data.filter.map((filter, index) => ({

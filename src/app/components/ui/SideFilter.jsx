@@ -3,7 +3,7 @@ import React from 'react'
 import FilterGroup from './FilterGroup.jsx'
 import SearchInput from './SearchInput.jsx'
 
-import StSideFilter from '../style/SideFilter.module.css'
+import StSideFilter from '../../style/ui/SideFilter.module.css'
 
 export default function SideFilter() {
     const data = [

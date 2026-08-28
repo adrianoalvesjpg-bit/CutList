@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Button from './Button';
 import SearchInput from './SearchInput';
 
-import StHearderRegister from '../style/HeaderRegister.module.css';
+import StHearderRegister from '../../style/ui/HeaderRegister.module.css';
 import { BiShow } from "react-icons/bi";
 
 export default function HeaderRegister({number}) {

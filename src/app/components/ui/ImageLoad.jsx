@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import ImageSt from '../style/ImageLoad.module.css'
+import ImageSt from '../../style/ui/ImageLoad.module.css'
 import { p } from 'motion/react-client';
 
 import { FaCamera } from "react-icons/fa"
