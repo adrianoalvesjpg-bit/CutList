@@ -100,10 +100,11 @@
   align-items: center;
   justify-content: center;
   width: 40%;
-  height: 55px;
+  height: 60px;
   z-index: 1;
   background-color: var(--bg-bt);
   border-radius: 50px;
+  gap: 20px;
 }
 
 .exitBt {

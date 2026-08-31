@@ -3,10 +3,17 @@ import { useEffect, useState } from "react";
 
 import HeaderSt from '../../style/ui/Header.module.css'
 import UserSt from '../../style/ui/User.module.css'
-import { head, header } from "motion/react-client";
 import { IoExitOutline } from "react-icons/io5";
 
-function Header({screen, screenSelect}){
+function Header({
+    screen,
+    screenSelect,
+    outAdd,
+    derivationAdd,
+    terminationAdd,
+    spliceAdd,
+    componentsAdd
+    }){
     const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
@@ -28,6 +35,11 @@ function Header({screen, screenSelect}){
         return (
             <>
             <header className={HeaderSt.devMode}>
+                <button onClick={() => outAdd("nova saída")}>+ Saída</button>
+                <button onClick={() => derivationAdd("nova derivação")}>+ Derivação</button>
+                <button onClick={() => terminationAdd("nova terminação")}>+ Terminação</button>
+                <button onClick={() => spliceAdd("nova emenda")}>+ Emenda</button>
+                <button onClick={() => componentsAdd("novo componente")}>+ Componente</button>
             </header>
 
             <IoExitOutline onClick={() => screenSelect(0)} className={HeaderSt.exitBt}/>
