@@ -1,5 +1,5 @@
 .input-div {
-    color:none;
+    color: var(--text);
     display: block;
     gap: 20px;
     width: 100%;

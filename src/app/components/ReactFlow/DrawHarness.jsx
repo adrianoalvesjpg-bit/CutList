@@ -1,62 +1,102 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import {
   ReactFlow,
+  ReactFlowProvider,
+  useReactFlow,
   useNodesState,
   useEdgesState,
   addEdge,
-  Handle,
-  Position,
   Controls,
   Background,
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 
-
 import StDrawHarness from '../../style/ReactFlow/DrawHarness.module.css'
-import { div } from 'motion/react-client';
+import DerivationNode from './DerivationNode'
+import OutNode from './OutNode'
+import TerminationNode from './TerminationNode'
+import SpliceNode from './SpliceNode'
+import DiodoNode from './DiodoNode'
+import ResistorNode from './ResistorNode'
+import FloatingEdge from './FloatingEdge'
 
-// --- CUSTOM NODE ---
-// É só um componente React normal. `data` vem do objeto do node.
-function TaskNode({ data }) {
-  return (
-    <div style={{
-      padding: '10px 15px',
-      borderRadius: 8,
-      border: '2px solid #6366f1',
-      background: '#fff',
-      minWidth: 150,
-    }}>
-      {/* Handle = ponto de conexão. "target" recebe edges, "source" cria edges */}
-      <Handle type="target" position={Position.Left} />
-      
-      <strong>{data.label}</strong>
-      <p style={{ margin: 0, fontSize: 12, color: '#666' }}>{data.status}</p>
+const nodeTypes = {
+  derivation: DerivationNode,
+  out: OutNode,
+  termination: TerminationNode,
+  splice: SpliceNode,
+  diodo: DiodoNode,
+  resistor: ResistorNode,
+};
 
-      <Handle type="source" position={Position.Right} />
-    </div>
-  );
-}
+const edgeTypes = { floating: FloatingEdge };
 
-// Registra o tipo custom pra usar no array de nodes
-const nodeTypes = { task: TaskNode };
+const initialNodes = [];
+const initialEdges = [];
 
-const initialNodes = [
-  { id: '1', type: 'task', position: { x: 0, y: 0 }, data: { label: 'Planejar', status: 'Feito' } },
-  { id: '2', type: 'task', position: { x: 300, y: 0 }, data: { label: 'Executar', status: 'Em andamento' } },
-  { id: '3', type: 'task', position: { x: 300, y: 150 }, data: { label: 'Revisar', status: 'Pendente' } },
-];
-
-const initialEdges = [
-  { id: 'e1-2', source: '1', target: '2' },
-];
-
-function Flow() {
+function FlowInner({ addNodeHandlers, setNodeHandlers }) {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+  const { screenToFlowPosition } = useReactFlow();
+  const wrapperRef = useRef(null);
 
-  // onConnect dispara quando o usuário arrasta de um handle pra outro.
-  // useCallback aqui é só otimização (evita recriar a função a cada render) —
-  // não é obrigatório pro código funcionar, mas é padrão comum em exemplos React Flow.
+  const getViewportCenter = useCallback(() => {
+    const bounds = wrapperRef.current.getBoundingClientRect();
+    return screenToFlowPosition({
+      x: bounds.x + bounds.width / 2,
+      y: bounds.y + bounds.height / 2,
+    });
+  }, [screenToFlowPosition]);
+
+  const snapToGrid = (pos) => ({
+  x: Math.round(pos.x / GRID_SIZE) * GRID_SIZE,
+  y: Math.round(pos.y / GRID_SIZE) * GRID_SIZE,
+  });
+  const GRID_SIZE=10;
+  const addNode = useCallback((type, position, grid = true) => {
+    
+    setNodes((nodes) => {
+      const id = (nodes.length + 1).toString();
+      let customNodes = nodes.filter(node => node.type === type);
+
+      let data = customNodes.length + 1;
+      if (type === 'derivation') data = 'N' + data;
+
+      if (type === 'termination') data = 'T' + data;
+
+      if (type === 'splice') data = 'S' + data;
+
+      if (type === 'diodo') data = 'D' + data;
+
+      if (type === 'resistor') data = 'R' + data;
+
+      let finalPosition = position ?? getViewportCenter();
+
+      if (grid) {
+        finalPosition = snapToGrid(finalPosition);
+      }
+
+      const newNode = {
+        id,
+        type,
+        position: finalPosition,
+        data,
+      };
+      return [...nodes, newNode];
+    });
+  }, [setNodes, getViewportCenter]);
+
+  useEffect(() => {
+    setNodeHandlers({
+      out: () => addNode('out'),
+      derivation: () => addNode('derivation'),
+      termination: () => addNode('termination'),
+      splice: () => addNode('splice'),
+      diodo: () => addNode('diodo'),
+      resistor: () => addNode('resistor'),
+    });
+  }, [addNode, setNodeHandlers]);
+
   const onConnect = useCallback(
     (params) => setEdges((eds) => addEdge(params, eds)),
     [setEdges]
@@ -64,10 +104,17 @@ function Flow() {
 
   return (
     <div className={StDrawHarness.main}>
-      <div className={StDrawHarness.canva}>
+      <div className={StDrawHarness.canva} ref={wrapperRef}>
         <ReactFlow
           nodes={nodes}
           edges={edges}
+          edgeTypes={edgeTypes}
+          snapToGrid={true}
+          snapGrid={[10, 10]}
+          minZoom={0.5}
+          maxZoom={8}
+          defaultEdgeOptions={{ type: 'floating' }}
+          connectionLineType="straight"
           onNodesChange={onNodesChange}
           onEdgesChange={onEdgesChange}
           onConnect={onConnect}
@@ -75,12 +122,30 @@ function Flow() {
           proOptions={{ hideAttribution: true }}
           fitView
         >
-          <Background />
-          <Controls />
+          <Background 
+          variant="dots"
+          gap={10}
+          size={0.5}
+          />
+          <Controls
+          className={StDrawHarness.controls}
+          position="bottom-right"      // top-left, top-right, bottom-left, bottom-right, top-center, bottom-center
+          orientation="vertical"        // ou "horizontal"
+          showZoom={true}
+          showFitView={true}
+          showInteractive={true}        // botão de lock/unlock (trava arrastar nodes)
+        />
         </ReactFlow>
       </div>
     </div>
   );
 }
 
-export default Flow;
+// Única função "Flow" do arquivo, e a única exportada
+export default function Flow(props) {
+  return (
+    <ReactFlowProvider>
+      <FlowInner {...props} />
+    </ReactFlowProvider>
+  );
+}

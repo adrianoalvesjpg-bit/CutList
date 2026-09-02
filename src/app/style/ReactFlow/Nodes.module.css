@@ -1,0 +1,109 @@
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 7px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    color: var(--text-title);
+}
+
+.handle {
+    position: absolute;
+    width: 24%;
+    height: 24%;
+    border-radius: 50%;
+    top: 50%;
+    opacity: 0;
+}
+
+.nodeBase {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    height: 14px;
+    width: 14px;
+    border: 1px solid var(--border-strong);
+    transition: transform 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.nodeBase:hover {
+    transform: scale(1.05);
+}
+
+
+
+.derivationNode {
+    composes: nodeBase;
+    background-color: var(--surface);
+}
+.derivationNode:hover {
+    border-color: var(--danger-transp);
+}
+.derivationNode:has(.handle:hover) {
+    border-color: var(--icon-success);
+}
+
+.outNode {
+    composes: nodeBase;
+    background-color: var(--alert-bg);
+}
+.outNode:hover {
+    border-color: var(--danger-transp);
+}
+.outNode:has(.handle:hover) {
+    border-color: var(--icon-success);
+}
+
+
+.terminationNode {
+    composes: nodeBase;
+    background-color: var(--surface-strong);
+}
+.terminationNode:hover {
+    border-color: var(--danger-transp);
+}
+.terminationNode:has(.handle:hover) {
+    border-color: var(--icon-success);
+}
+
+
+.resistorNode {
+    composes: nodeBase;
+    background-color: var(--icon-danger);
+}
+.resistorNode:hover {
+    border-color: var(--success-border);
+}
+.resistorNode:has(.handle:hover) {
+    border-color: var(--icon-success);
+}
+
+
+.diodoNode {
+    composes: nodeBase;
+    background-color: var(--accent);
+}
+.diodoNode:hover {
+    border-color: var(--danger-transp);
+}
+.diodoNode:has(.handle:hover) {
+    border-color: var(--icon-success);
+}
+
+
+.spliceNode {
+    composes: nodeBase;
+    background-color: var(--icon-success);
+}
+.spliceNode:hover {
+    border-color: var(--danger-transp);
+}
+.spliceNode:has(.handle:hover) {
+    border-color: var(--danger-strong);
+}

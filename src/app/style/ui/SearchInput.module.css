@@ -12,8 +12,8 @@
   height: 40px;
   padding: 10px 16px 10px 42px; /* Espaço na esquerda para o ícone */
   font-size: 0.8rem;
-  color: #f3f4f6;
-  background-color: var(--bg-bt); /* Fundo escuro */
+  color: var(--input-text);
+  background-color: var(--bg-bt);
   border: 1px solid var(--border);
   border-radius: 25px;
   outline: none;
@@ -37,7 +37,7 @@
   left: 14px;
   width: 18px;
   height: 18px;
-  color: #9ca3af;
+  color: var(--icon-muted);
   pointer-events: none; /* Permite clicar através do ícone */
   transition: color 0.2s ease-in-out;
 }

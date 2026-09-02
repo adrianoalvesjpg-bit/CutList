@@ -11,8 +11,8 @@
     align-items: center;
     margin-bottom: 40px;
     padding: 15px 40px 15px 40px;
-    border: solid 2px #29272b;
-    box-shadow: 0 3px 10px 0px #4b494938;
+    border: solid 2px var(--border);
+    box-shadow: 0 3px 10px 0px var(--shadow-div);
     transition: 0.3s ease-in-out;
     gap: 40px;
 
@@ -20,15 +20,15 @@
 }
 
 .main:hover {
-    border-color: #2f2e31;
-    box-shadow: 0 3px 18px 0px #4b494938;
+    border-color: var(--border-strong);
+    box-shadow: 0 3px 18px 0px var(--shadow-div);
 
 
 }
 
 .div:hover {
     transition: all 0.3s ease-in-out;
-    color: #cdccce;
+    color: var(--text-hover);
     scale: 1.05;
 }
 

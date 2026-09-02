@@ -1,39 +1,51 @@
 :root {
+  --background: #f3f7fb;
+  --foreground: #18212d;
+  --surface: #ffffff;
+  --surface-alt: #edf4fb;
+  --surface-strong: #dfeaf7;
 
-  --header-background: linear-gradient(180deg, #010101, #0d1420);
-  --shadow-div: #38383860;
-  --shadow-input: rgba(99, 149, 241, 0.2);
-  --bg-bt: #15101d;
-  --bg-bt-hv: #1a1124;
-  --bg-border-focus: #6395f196;
-  --border-hv: #2a4f75;
-  --bg-transparent: #60526921;
+  --header-background: linear-gradient(180deg, #0b1220, #142332);
+  --shadow-div: rgba(15, 23, 42, 0.12);
+  --shadow-input: rgba(45, 108, 223, 0.18);
+  --bg-bt: #edf4ff;
+  --bg-bt-hv: #dfeaf9;
+  --bg-border-focus: rgba(69, 132, 255, 0.6);
+  --border-hv: #5e88c8;
+  --bg-transparent: rgba(92, 119, 154, 0.09);
+  --div-bg: #ffffff;
 
+  --text: #425466;
+  --text-muted: #697a8d;
+  --text-title: #1b2430;
+  --text-hover: #234c83;
+  --text-error: #c83d3d;
+  --text-h: #101827;
+  --bg: #ffffff;
+  --border: #d8e2ee;
+  --border-strong: #9fadbe;
+  --border2: #c8d5e3;
+  --code-bg: #edf4fb;
 
-  /* ---------------------------------------------------------------------------------------------------------- */
-  /* ---------------------------------------------------------------------------------------------------------- */
-  /* ---------------------------------------------------------------------------------------------------------- */
-  /* ---------------------------------------------------------------------------------------------------------- */
-  /* ---------------------------------------------------------------------------------------------------------- */
-  /* ---------------------------------------------------------------------------------------------------------- */
-
-  --div-bg: #0d0e0f;
-  --text: #abb2be;
-  --text-title: #f8f8f8;
-  --text-hover: #e1dde7;
-  --text-error: #ff4d4f;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #3b82c4;
-  --accent-light: #8fc5f5;
-  --accent-dark: #2563a0;
-  --accent-bg: rgba(59, 130, 196, 0.1);
-  --accent-border: rgba(59, 130, 196, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  --accent: #2d6cdf;
+  --accent-light: #dfeaff;
+  --accent-dark: #1b4ea3;
+  --accent-black: #1e2b3b;
+  --accent-bg: rgba(45, 108, 223, 0.08);
+  --accent-border: rgba(45, 108, 223, 0.28);
+  --social-bg: rgba(223, 233, 245, 0.7);
+  --shadow-light: rgba(45, 108, 223, 0.22);
+  --tooltip-bg: #1a2432;
+  --tooltip-text: #f7fbff;
+  --image-border: #ced6e1;
+  --icon-muted: #6a7280;
+  --icon-success: #168040;
+  --icon-danger: #b42f2f;
+  --success-bg: rgba(22, 128, 64, 0.12);
+  --success-border: rgba(22, 128, 64, 0.34);
+  --danger-bg: rgba(180, 47, 47, 0.11);
+  --danger-border: rgba(180, 47, 47, 0.3);
+  --input-text: #1b2430;
 
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
@@ -56,21 +68,42 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #7c7c7c;
+    --background: #090d16;
+    --foreground: #eef4ff;
+    --surface: #111827;
+    --surface-alt: #161f2d;
+    --surface-strong: #1d2a3a;
+    --text: #d4dce7;
+    --text-muted: #9aa9ba;
+    --text-title: #edf4ff;
+    --text-hover: #dcecff;
+    --text-error: #ff7a7a;
     --text-h: #f3f4f6;
-    --bg: #020407;
-    --border: #332e3a;
+    --bg: #0a0f18;
+    --border: #2d3747;
+    --border-strong: #5c6d82;
     --border2: #1e2b3b;
-    --border-hv: #2a4f75;
-    --code-bg: #1f2028;
+    --border-hv: #6f9ad7;
+    --code-bg: #1c2430;
     --accent: #74a9dd;
-    --accent-light: #a9d5ff;
+    --accent-light: #afd7ff;
     --accent-dark: #397eb8;
-    --accent-bg: rgba(132, 180, 252, 0.15);
-    --accent-border: rgba(132, 180, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+    --accent-bg: rgba(116, 169, 221, 0.12);
+    --accent-border: rgba(116, 169, 221, 0.35);
+    --social-bg: rgba(33, 42, 52, 0.7);
+    --shadow-light: rgba(116, 169, 221, 0.25);
+    --tooltip-bg: #e7eef7;
+    --tooltip-text: #0d1726;
+    --image-border: #3a4758;
+    --icon-muted: #9aa8b8;
+    --icon-success: #53d67f;
+    --icon-danger: #ff6b6b;
+    --success-bg: rgba(83, 214, 127, 0.13);
+    --success-border: rgba(83, 214, 127, 0.3);
+    --danger-bg: rgba(255, 107, 107, 0.12);
+    --danger-border: rgba(255, 107, 107, 0.25);
+    --input-text: #edf4ff;
+    --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
   }
 
   #social .button-icon {

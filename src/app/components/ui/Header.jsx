@@ -8,12 +8,14 @@ import { IoExitOutline } from "react-icons/io5";
 function Header({
     screen,
     screenSelect,
-    outAdd,
-    derivationAdd,
-    terminationAdd,
-    spliceAdd,
-    componentsAdd
+    onAddOut,
+    onAddDerivation,
+    onAddTermination,
+    onAddSplice,
+    onAddDiodo,
+    onAddResistor
     }){
+
     const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
@@ -35,11 +37,12 @@ function Header({
         return (
             <>
             <header className={HeaderSt.devMode}>
-                <button onClick={() => outAdd("nova saída")}>+ Saída</button>
-                <button onClick={() => derivationAdd("nova derivação")}>+ Derivação</button>
-                <button onClick={() => terminationAdd("nova terminação")}>+ Terminação</button>
-                <button onClick={() => spliceAdd("nova emenda")}>+ Emenda</button>
-                <button onClick={() => componentsAdd("novo componente")}>+ Componente</button>
+                <button onClick={() => onAddOut()}>+ Saída</button>
+                <button onClick={() => onAddDerivation()}>+ Derivação</button>
+                <button onClick={() => onAddTermination()}>+ Terminação</button>
+                <button onClick={() => onAddSplice()}>+ Emenda</button>
+                <button onClick={() => onAddDiodo()}>+ Diodo</button>
+                <button onClick={() => onAddResistor()}>+ Resistor</button>
             </header>
 
             <IoExitOutline onClick={() => screenSelect(0)} className={HeaderSt.exitBt}/>

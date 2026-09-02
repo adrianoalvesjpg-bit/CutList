@@ -64,31 +64,47 @@
 }
 
 .devModeBt {
+  position: relative;
   border: solid 1px var(--border-hv);
   background-color: var(--bg-bt);
   margin-right: 80px;
   padding: 10px 25px 10px 25px;
   border-radius: 25px;
-  transition: scale 0.3s ease, border-radius 0.8s ease, box-shadow 0.3s ease;
+  transition: scale 0.3s ease, border-radius 0.8s ease, box-shadow 0.3s ease, background-color 0.3s ease-in-out;
   font-weight: bold;
+  overflow: hidden;
+  z-index: 0;
 }
-.devModeBt:hover {
+
+.devModeBt::before {
+  content: '';
+  position: absolute;
+  inset: 0;
   background: linear-gradient(270deg, var(--background), var(--border-hv), var(--accent), var(--bg-border-focus), var(--border-hv), var(--background));
   background-size: 400% 400%;
   animation: gradientMove 6s ease infinite;
-  transition: all 0.5s ease-in-out;
+  z-index: -1;
+  border-radius: 50px;
+}
+
+.devModeBt:hover {
+  background-color: transparent;
   box-shadow: 0 0 15px var(--shadow-light);
-
-
 }
 
 .devModeBt.activeDev {
-  background: linear-gradient(270deg, var(--background), var(--border-hv), var(--accent), var(--bg-border-focus), var(--border-hv), var(--background));
-  background-size: 400% 400%;
+  background-color: transparent;
   color: var(--text-h);
   box-shadow: 0 0 15px var(--shadow-light);
-  animation: gradientMove 6s ease infinite;
+}
 
+.devModeBt:hover::before {
+  opacity: 1;
+}
+
+.devModeBt.activeDev {
+  color: var(--text-h);
+  box-shadow: 0 0 15px var(--shadow-light);
 }
 
 .devMode {
@@ -110,17 +126,18 @@
 .exitBt {
   display: flex;
   position: fixed;
-  top: 30px;
-  right: 30px;
-  height: 30px;
-  width: 30px;
+  top: 10px;
+  right: 12px;
+  height: 25px;
+  width: 25px;
   z-index: 1;
   cursor: pointer;
+  color: var(--devmControls-color);
 
 }
 .exitBt:hover {
   transform: scale(1.05);
-  color: #a21111;
+  color: var(--danger-transp);
   transition: all 0.2s ease-in-out;
 }
 
