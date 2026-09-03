@@ -1,15 +1,18 @@
 
+
 .text {
     position: absolute;
-    top: 50%;
+    top: 52%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 7px;
+    transform: translate(-50%, -42%);
+    font-size: 2px;
     font-weight: 700;
     line-height: 1;
     letter-spacing: 0.04em;
     color: var(--text-title);
 }
+
+
 
 .handle {
     position: absolute;
@@ -26,17 +29,32 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    height: 14px;
-    width: 14px;
+    height: 5px;
+    width: 5px;
     border: 1px solid var(--border-strong);
     transition: transform 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
 }
 
-.nodeBase:hover {
+.nodeBase:hover,
+.resistorNode:hover {
     transform: scale(1.05);
 }
 
-
+.nodeBase::before,
+.resistorNode::before {
+    height: 10px;
+    width: 10px;
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 0.3px 0.1px var(--border-strong);
+    opacity: 0;
+    transition:  0.2s ease;
+}
+.nodeBase:hover::before,
+.resistorNode:hover::before {
+    opacity: 1;
+}
 
 .derivationNode {
     composes: nodeBase;
@@ -52,6 +70,12 @@
 .outNode {
     composes: nodeBase;
     background-color: var(--alert-bg);
+
+}
+.outNode .text {
+    top: -3px;
+    font-size: 4px;
+    padding: 0px;
 }
 .outNode:hover {
     border-color: var(--danger-transp);
@@ -72,16 +96,28 @@
     border-color: var(--icon-success);
 }
 
-
 .resistorNode {
-    composes: nodeBase;
-    background-color: var(--icon-danger);
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    height: 5.1px;
+    width: 5.1px;
+    font-size: 5px;
+    color: var(--icon-danger);
+    padding: 0.1px;
+    
 }
-.resistorNode:hover {
-    border-color: var(--success-border);
-}
+
 .resistorNode:has(.handle:hover) {
-    border-color: var(--icon-success);
+    box-shadow: 0 0 0.3px 0.1px var(--icon-success);
+
+
+}
+
+.resistorNode .text {
+    top: -1px;
 }
 
 
@@ -105,5 +141,5 @@
     border-color: var(--danger-transp);
 }
 .spliceNode:has(.handle:hover) {
-    border-color: var(--danger-strong);
+    border-color: var(--icon-success);
 }

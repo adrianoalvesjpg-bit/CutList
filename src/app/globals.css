@@ -48,7 +48,7 @@
   --danger-border: rgba(180, 47, 47, 0.3);
   --danger-strong: #a21111;
   --danger-transp: #990303a1;
-  --alert-bg: #fffb00a9;
+  --alert-bg: #c3c003;
   --alert-border: #fffb002a;
   --input-text: #1b2430;
   --scrollbar-thumb: rgba(92, 119, 154, 0.32);
@@ -107,8 +107,8 @@
     --danger-bg: rgba(255, 107, 107, 0.158);
     --danger-border: rgba(255, 107, 107, 0.25);
     --danger-strong: #ff6b6b;
-    --danger-transp: #ff6b6b86;
-    --alert-bg: #fffb00a9;
+    --danger-transp: #ff6b6bb2;
+    --alert-bg: #c3c003;
     --alert-border: #fffb002a;
     --input-text: #edf4ff;
     --scrollbar-thumb: rgba(168, 180, 198, 0.28);
@@ -117,8 +117,8 @@
     --devmControls-bg: #5a5a5a6c;
     --devmControls-bg-hv: #5a5a5a18;
     --devmControls-border-hv: #353535e8;
-    --devmControls-color: #4343439f;
-    --devmControls-color-hv: #9e9e9e;
+    --devmControls-color: #6c6c6ca2;
+    --devmControls-color-hv: #bebebe;
   }
 }
 

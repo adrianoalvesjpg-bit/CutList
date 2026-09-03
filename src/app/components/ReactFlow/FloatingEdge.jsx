@@ -1,7 +1,7 @@
 // FloatingEdge.jsx
 import { getStraightPath, useInternalNode } from '@xyflow/react';
 
-const RADIUS = 8.5; // metade dos 10px do node
+const RADIUS = 3; // metade dos 10px do node
 
 function getNodeCenter(node) {
   const { x, y } = node.internals.positionAbsolute;

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import {
   ReactFlow,
   ReactFlowProvider,
@@ -19,6 +19,7 @@ import SpliceNode from './SpliceNode'
 import DiodoNode from './DiodoNode'
 import ResistorNode from './ResistorNode'
 import FloatingEdge from './FloatingEdge'
+import RightSide from './RightSide'
 
 const nodeTypes = {
   derivation: DerivationNode,
@@ -102,6 +103,9 @@ function FlowInner({ addNodeHandlers, setNodeHandlers }) {
     [setEdges]
   );
 
+
+  const [onGrid, setOnGrid] = useState(true);
+
   return (
     <div className={StDrawHarness.main}>
       <div className={StDrawHarness.canva} ref={wrapperRef}>
@@ -109,10 +113,10 @@ function FlowInner({ addNodeHandlers, setNodeHandlers }) {
           nodes={nodes}
           edges={edges}
           edgeTypes={edgeTypes}
-          snapToGrid={true}
+          snapToGrid={onGrid}
           snapGrid={[10, 10]}
           minZoom={0.5}
-          maxZoom={8}
+          maxZoom={20}
           defaultEdgeOptions={{ type: 'floating' }}
           connectionLineType="straight"
           onNodesChange={onNodesChange}
@@ -126,7 +130,9 @@ function FlowInner({ addNodeHandlers, setNodeHandlers }) {
           variant="dots"
           gap={10}
           size={0.5}
+          offset={[2.8, 2.8]}
           />
+          
           <Controls
           className={StDrawHarness.controls}
           position="bottom-right"      // top-left, top-right, bottom-left, bottom-right, top-center, bottom-center
@@ -137,6 +143,9 @@ function FlowInner({ addNodeHandlers, setNodeHandlers }) {
         />
         </ReactFlow>
       </div>
+          <RightSide OnGrid={onGrid} setOnGrid={setOnGrid} />
+
+      
     </div>
   );
 }

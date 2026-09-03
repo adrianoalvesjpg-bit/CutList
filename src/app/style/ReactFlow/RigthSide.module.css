@@ -1,0 +1,24 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    gap: 15px;
+    padding: 10px 22.5px 20px 22.5px;
+    bottom: 160px;
+    right: 0;
+}
+
+.gridBt {
+    margin-top: auto;
+    scale: 1.4;
+    color: var(--devmControls-color);
+}
+.gridBt:hover {
+    color: var(--devmControls-color-hv);
+    transition: all 0.2s ease;
+}
+
+.gridBt.active {
+  color: var(--icon-success);
+  transition: all 0.2s ease;
+}
