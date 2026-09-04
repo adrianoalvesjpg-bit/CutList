@@ -1,0 +1,14 @@
+.background {
+    fill: none;
+}
+
+.border {
+    stroke: var(--accent-dark);
+}
+
+.main {
+    margin:0;
+    display: flex;
+    position: relative;
+    top: 0;
+}

@@ -4,7 +4,7 @@
     position: absolute;
     top: 52%;
     left: 50%;
-    transform: translate(-50%, -42%);
+    transform: translate(-49%, -44%);
     font-size: 2px;
     font-weight: 700;
     line-height: 1;
@@ -35,41 +35,12 @@
     transition: transform 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
 }
 
-.nodeBase:hover,
-.resistorNode:hover {
-    transform: scale(1.05);
-}
 
-.nodeBase::before,
-.resistorNode::before {
-    height: 10px;
-    width: 10px;
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    box-shadow: 0 0 0.3px 0.1px var(--border-strong);
-    opacity: 0;
-    transition:  0.2s ease;
-}
-.nodeBase:hover::before,
-.resistorNode:hover::before {
-    opacity: 1;
-}
 
-.derivationNode {
-    composes: nodeBase;
-    background-color: var(--surface);
-}
-.derivationNode:hover {
-    border-color: var(--danger-transp);
-}
-.derivationNode:has(.handle:hover) {
-    border-color: var(--icon-success);
-}
 
 .outNode {
     composes: nodeBase;
-    background-color: var(--alert-bg);
+    background-color: var(--icon-success);
 
 }
 .outNode .text {
@@ -77,24 +48,24 @@
     font-size: 4px;
     padding: 0px;
 }
-.outNode:hover {
-    border-color: var(--danger-transp);
-}
-.outNode:has(.handle:hover) {
-    border-color: var(--icon-success);
+
+
+
+
+.derivationNode {
+    composes: nodeBase;
+    background-color: var(--surface);
 }
 
 
 .terminationNode {
     composes: nodeBase;
-    background-color: var(--surface-strong);
+    background-color: var(--surface-light);
 }
-.terminationNode:hover {
-    border-color: var(--danger-transp);
-}
-.terminationNode:has(.handle:hover) {
-    border-color: var(--icon-success);
-}
+
+
+
+
 
 .resistorNode {
     display: flex;
@@ -105,25 +76,60 @@
     height: 5.1px;
     width: 5.1px;
     font-size: 5px;
-    color: var(--icon-danger);
+    color: var(--alert-bg);
     padding: 0.1px;
     
 }
 
-.resistorNode:has(.handle:hover) {
-    box-shadow: 0 0 0.3px 0.1px var(--icon-success);
-
-
-}
 
 .resistorNode .text {
     top: -1px;
+    left: 2.4px;
 }
 
 
+
+
+.spliceNode {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    height: 5.1px;
+    width: 5.1px;
+    font-size: 5px;
+    color: var(--icon-danger);
+    padding: 0.1px;
+
+}
+
+.spliceNode .text {
+    top: -2px;
+    left: 2.4px;
+}
+
+.spliceNode:hover {
+    border-color: var(--danger-transp);
+}
+.spliceNode:has(.handle:hover) {
+    border-color: var(--icon-success);
+}
+
+
+
+
+
+
+
 .diodoNode {
-    composes: nodeBase;
-    background-color: var(--accent);
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    height: 5px;
+    width: 5.1px;
 }
 .diodoNode:hover {
     border-color: var(--danger-transp);
@@ -132,14 +138,48 @@
     border-color: var(--icon-success);
 }
 
+.diodoNode .text {
+    top: -1px;
+    left: 2.4px;
+}
 
-.spliceNode {
-    composes: nodeBase;
-    background-color: var(--icon-success);
+
+
+
+
+
+
+.nodeBase:hover,
+.resistorNode:hover,
+.spliceNode:hover,
+.diodoNode:hover {
+    transform: scale(1.05);
 }
-.spliceNode:hover {
-    border-color: var(--danger-transp);
+
+.nodeBase::before,
+.resistorNode::before,
+.spliceNode::before,
+.diodoNode::before {
+    height: 10px;
+    width: 10px;
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 0.3px 0.1px var(--border-strong);
+    opacity: 0;
+    transition:  0.2s ease;
 }
-.spliceNode:has(.handle:hover) {
-    border-color: var(--icon-success);
+.nodeBase:hover::before,
+.resistorNode:hover::before,
+.spliceNode:hover::before,
+.diodoNode:hover::before {
+    opacity: 1;
 }
+
+.nodeBase:has(.handle:hover)::before,
+.resistorNode:has(.handle:hover)::before,
+.spliceNode:has(.handle:hover)::before,
+.diodoNode:has(.handle:hover)::before {
+    box-shadow: 0 0 0.3px 0.1px var(--icon-success);
+}
+
