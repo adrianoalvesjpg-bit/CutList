@@ -21,6 +21,8 @@ import ResistorNode from './ResistorNode'
 import FloatingEdge from './FloatingEdge'
 import RightSide from './RightSide'
 
+import useEdgeIntersection from './useEdgeIntersection';
+
 const nodeTypes = {
   derivation: DerivationNode,
   out: OutNode,
@@ -38,8 +40,15 @@ const initialEdges = [];
 function FlowInner({ addNodeHandlers, setNodeHandlers }) {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+
+  const [onGrid, setOnGrid] = useState(false);
+  const [onIntersection, setIntersection] = useState(false);
+
+
   const { screenToFlowPosition } = useReactFlow();
   const wrapperRef = useRef(null);
+  
+  const { onNodeDrag, onNodeDragStop } = useEdgeIntersection({enabled:onIntersection});
 
   const getViewportCenter = useCallback(() => {
     const bounds = wrapperRef.current.getBoundingClientRect();
@@ -102,9 +111,7 @@ function FlowInner({ addNodeHandlers, setNodeHandlers }) {
     (params) => setEdges((eds) => addEdge(params, eds)),
     [setEdges]
   );
-
-
-  const [onGrid, setOnGrid] = useState(true);
+  
 
   return (
     <div className={StDrawHarness.main}>
@@ -117,10 +124,12 @@ function FlowInner({ addNodeHandlers, setNodeHandlers }) {
           snapGrid={[10, 10]}
           minZoom={0.5}
           maxZoom={20}
-          defaultEdgeOptions={{ type: 'floating' }}
+          defaultEdgeOptions={{ type: 'floating', interactionWidth: 10 }}
           connectionLineType="straight"
           onNodesChange={onNodesChange}
           onEdgesChange={onEdgesChange}
+          onNodeDrag={onNodeDrag}
+          onNodeDragStop={onNodeDragStop}
           onConnect={onConnect}
           nodeTypes={nodeTypes}
           proOptions={{ hideAttribution: true }}
@@ -143,9 +152,12 @@ function FlowInner({ addNodeHandlers, setNodeHandlers }) {
         />
         </ReactFlow>
       </div>
-          <RightSide OnGrid={onGrid} setOnGrid={setOnGrid} />
-
-      
+          <RightSide 
+          OnGrid={onGrid}
+          setOnGrid={setOnGrid}
+          OnIntersection={onIntersection}
+          setIntersection={setIntersection}
+          /> 
     </div>
   );
 }

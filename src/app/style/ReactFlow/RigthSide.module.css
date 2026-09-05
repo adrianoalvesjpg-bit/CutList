@@ -8,17 +8,50 @@
     right: 0;
 }
 
-.gridBt {
+
+
+.tooltip {
+    visibility: hidden;
+    position: absolute;
+    right: 5px;
+    bottom: 20px;
+    color: var(--tooltip-text);
+    background-color: var(--tooltip-bg);
+    font-size: 0.65rem;
+    padding: 6px;
+    border-radius: 4px;
+    z-index: 1;
+    transition-delay: 0.4s;
+    pointer-events: none;
+}
+
+
+.bt {
     margin-top: auto;
     scale: 1.4;
     color: var(--devmControls-color);
 }
-.gridBt:hover {
+.bt:hover {
     color: var(--devmControls-color-hv);
     transition: all 0.2s ease;
 }
 
-.gridBt.active {
+.bt.active {
   color: var(--icon-success);
   transition: all 0.2s ease;
 }
+
+.intersection,
+.grid {
+    position: relative;
+}
+
+
+.intersection:hover .tooltip,
+.grid:hover .tooltip {
+    transition: all 0.3s ease-in-out;
+    visibility: visible;
+    transition-delay: 0.4s;
+}
+
+

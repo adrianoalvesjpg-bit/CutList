@@ -1,7 +1,7 @@
 // FloatingEdge.jsx
-import { getStraightPath, useInternalNode } from '@xyflow/react';
+import { BaseEdge, getStraightPath, useInternalNode } from '@xyflow/react';
 
-const RADIUS = 3; // metade dos 10px do node
+const RADIUS = 3;
 
 function getNodeCenter(node) {
   const { x, y } = node.internals.positionAbsolute;
@@ -10,7 +10,6 @@ function getNodeCenter(node) {
   return { x: x + width / 2, y: y + height / 2 };
 }
 
-// Acha o ponto na borda do círculo na direção do outro node
 function getCircleIntersection(center, radius, target) {
   const angle = Math.atan2(target.y - center.y, target.x - center.x);
   return {
@@ -19,7 +18,7 @@ function getCircleIntersection(center, radius, target) {
   };
 }
 
-export default function FloatingEdge({ id, source, target, markerEnd, style }) {
+export default function FloatingEdge({ id, source, target, markerEnd, style, interactionWidth }) {
   const sourceNode = useInternalNode(source);
   const targetNode = useInternalNode(target);
 
@@ -38,5 +37,13 @@ export default function FloatingEdge({ id, source, target, markerEnd, style }) {
     targetY: targetPoint.y,
   });
 
-  return <path id={id} className="react-flow__edge-path" d={edgePath} markerEnd={markerEnd} style={style} />;
+  return (
+    <BaseEdge
+      id={id}
+      path={edgePath}
+      markerEnd={markerEnd}
+      style={style}
+      interactionWidth={interactionWidth}
+    />
+  );
 }
